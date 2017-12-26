@@ -1,0 +1,17 @@
+<script>
+
+Homey.setTitle(__('pair.done_title'));
+
+</script>
+
+<script type="text/javascript">
+	setTimeout(function () {
+		Homey.emit('done', function (err, device) {
+			Homey.addDevice(device, function () {
+				Homey.done();
+			});
+		});
+	}, 1000);
+</script>
+
+<i class="loading fa fa-cog fa-spin"></i>

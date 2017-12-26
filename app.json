@@ -1,0 +1,78 @@
+{
+  "id": "de.hoermann.garagedoor",
+  "name": {
+    "nl": "Hörmann Garagedeur",
+    "en": "Hörmann Garagedoor"
+  },
+  "description": {
+    "nl": "Bedien uw Hörmann Garagedeur met Homey",
+    "en": "Control your Hörmann Garage Doors with Homey"
+  },
+  "category": "security",
+  "version": "0.0.1",
+  "compatibility": ">=1.5",
+  "sdk": 2,
+  "author": {
+    "email": "jeroen@athom.com",
+    "name": "Jeroen Vollenbrock"
+  },
+  "images": {
+    "small": "/assets/images/small.jpg",
+    "large": "/assets/images/large.jpg"
+  },
+  "permissions": [
+    "homey:wireless:433"
+  ],
+  "drivers": [
+    {
+      "id": "hoermann",
+      "name": {
+        "en": "Garage door",
+        "nl": "Garagedeur"
+      },
+      "class": "lock",
+      "capabilities": [
+        "locked"
+      ],
+      "images": {
+        "small": "/drivers/hoermann/assets/images/small.jpg",
+        "large": "/drivers/hoermann/assets/images/large.jpg"
+      },
+      "pair": [
+        {
+          "id": "press_button",
+          "navigation": {}
+        },
+        {
+          "id": "done",
+          "navigation": {}
+        }
+      ]
+    }
+  ],
+  "signals": {
+    "433": {
+      "hoermann": {
+        "sof": [
+          800
+        ],
+        "eof": [],
+        "words": [
+          [
+            800,
+            1600
+          ],
+          [
+            1600,
+            800
+          ]
+        ],
+        "interval": 12000,
+        "sensitivity": 0.5,
+        "repetitions": 20,
+        "minimalLength": 12,
+        "maximalLength": 12
+      }
+    }
+  }
+}

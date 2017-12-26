@@ -1,0 +1,15 @@
+<script>
+
+Homey.setTitle(__('pair.press_button_title'));
+
+Homey.on('found_device', function() {
+    Homey.showView('done');
+});
+
+Homey.emit('start');
+
+</script>
+
+<div class="centered-container">
+	<div id="body"><span class="content" data-i18n="pair.press_button_msg"></span></div>
+</div>
